@@ -1,10 +1,10 @@
 const validateValue = require('./validateValue');
 //import {validateValue} from './validateValue.js';
 
-/* test('Валидация значения', () => {
+test('Валидация значения', () => {
     expect(validateValue(50)).toBe(true);
 })
- */
+ 
 describe('validateValue', () => {
     test('Корректное значение', () => {
         expect(validateValue(50)).toBe(true);
