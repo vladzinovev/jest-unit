@@ -26,12 +26,14 @@ describe('square', () => {
         // expect(square(2)).not.toBeUndefined();
         const spyMathPow = jest.spyOn(Math, 'pow');
         square(2);
+        //наша функция Math.pow будет вызвана один раз 
         expect(spyMathPow).toBeCalledTimes(1);
     })
 
     test('Корректное значение', () => {
         const spyMathPow = jest.spyOn(Math, 'pow');
         square(1);
+        //наша функция Math.pow будет вызвана ноль раз 
         expect(spyMathPow).toBeCalledTimes(0);
     })
 
@@ -43,6 +45,5 @@ describe('square', () => {
 
     //выполняется после всех тестов
     afterAll(() => {
-
     })
 })
