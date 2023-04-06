@@ -89,6 +89,8 @@ describe('getData', () => {
         const data = await getData();
         //ожидаем что он вызовется один раз
         expect(axios.get).toBeCalledTimes(1);
-        expect(data).toEqual(['1', '2', '3'])
+        expect(data).toEqual(['1', '2', '3']);
+        //создали snapshot выполненной функции
+        expect(data).toMatchSnapshot();
     })
 })
