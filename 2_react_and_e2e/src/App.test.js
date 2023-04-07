@@ -14,7 +14,7 @@ test('renders learn react link', () => {
   //toBeInTheDocument появиля ли в нашем документе
   expect(helloWorldElem).toBeInTheDocument();
   expect(btn).toBeInTheDocument();
-  expect(input).toBeInTheDocument();
+  expect(input).toMatchSnapshot();
   
   // eslint-disable-next-line testing-library/no-debugging-utils
   screen.debug();//возвращает разметку
