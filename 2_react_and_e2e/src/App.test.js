@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen,fireEvent } from '@testing-library/react';
 import App from './App';
 
 describe('TEST APP', () => {
@@ -20,12 +20,12 @@ describe('TEST APP', () => {
     // eslint-disable-next-line testing-library/no-debugging-utils
     screen.debug();//возвращает разметку
   }); */
-  test('renders learn react link', async () => {
+  test('for component data', async () => {
     //компонент который будем тестировать
     render(<App />);
 
-// eslint-disable-next-line testing-library/no-debugging-utils
-screen.debug();//возвращает разметку    
+    // eslint-disable-next-line testing-library/no-debugging-utils
+    screen.debug();//возвращает разметку    
 
     //получаем элемент по тексту data (i-игнорируем регистр)
     const data =await screen.findByText(/data/i);
@@ -35,7 +35,16 @@ screen.debug();//возвращает разметку
     expect(data).toHaveStyle({color: 'red'});
     // eslint-disable-next-line testing-library/no-debugging-utils
     screen.debug();//возвращает разметку
-    
   });
+
+  test("CLICK EVENT", () => {
+    render(<App />);
+    const btn = screen.getByTestId('toggle-btn');
+    expect(screen.queryByTestId('toggle-elem')).toBeNull();//tobenull потому что элемента еще нет
+    fireEvent.click(btn);//для работы с событиями
+    expect(screen.queryByTestId('toggle-elem')).toBeInTheDocument();//ожидаем что он уже появился на странице
+    fireEvent.click(btn);//для работы с событиями
+    expect(screen.queryByTestId('toggle-elem')).toBeNull();
+  })
   
 });
