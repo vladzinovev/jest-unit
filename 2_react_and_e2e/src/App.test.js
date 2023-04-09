@@ -43,6 +43,7 @@ describe('TEST APP', () => {
     const btn = screen.getByTestId('toggle-btn');
     expect(screen.queryByTestId('toggle-elem')).toBeNull();//tobenull потому что элемента еще нет
     fireEvent.click(btn);//для работы с событиями
+    // eslint-disable-next-line testing-library/prefer-presence-queries
     expect(screen.queryByTestId('toggle-elem')).toBeInTheDocument();//ожидаем что он уже появился на странице
     fireEvent.click(btn);//для работы с событиями
     expect(screen.queryByTestId('toggle-elem')).toBeNull();
