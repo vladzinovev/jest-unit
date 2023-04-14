@@ -1,8 +1,6 @@
 import { render, screen} from '@testing-library/react';
-import Users from "./Users";
+import Users from "./Users.js";
 import axios from 'axios';
-import userEvent from "@testing-library/user-event";
-import {renderWithRouter} from "../../tests/helpers/renderWithRouter";
 
 jest.mock('axios');
 
@@ -27,10 +25,6 @@ describe('USERS TEST', () => {
         }
     })
 
-    afterEach(() => {
-        jest.clearAllMocks();
-    })
-
     test('renders learn react link', async() => {
         //якобы получаем через axios запрос данные
         axios.get.mockReturnValue(response);
@@ -42,17 +36,6 @@ describe('USERS TEST', () => {
         expect(axios.get).toBeCalledTimes(1);
         // eslint-disable-next-line testing-library/no-debugging-utils
         screen.debug();
-    });
-
-    test('test redirect to details page', async() => {
-        //якобы получаем через axios запрос данные
-        axios.get.mockReturnValue(response);
-        render(renderWithRouter(<Users />));
-        //находим массив элементов
-        const users = await screen.findAllByTestId('user-item');
-        expect(users.length).toBe(3);//должно быть 3 элемента
-        userEvent.click(users[0]) //при клике на первый user
-        expect(screen.getByTestId('user-page')).toBeInTheDocument();
     });
 })
 

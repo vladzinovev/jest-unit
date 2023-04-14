@@ -1,4 +1,4 @@
-/* import { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 const App = () => {
   const [data, setData] = useState(null);
@@ -32,8 +32,8 @@ const App = () => {
 };
 
 export default App;
- */
 
+/* 
 import { BrowserRouter, Routes,Route } from "react-router-dom";
 import MainPage from './pages/MainPage';
 import AboutPage from './pages/AboutPage';
@@ -48,4 +48,4 @@ const App=()=>{
     </BrowserRouter>
   )
 }
-export default App;
+export default App; */

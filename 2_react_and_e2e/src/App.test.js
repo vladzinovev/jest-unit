@@ -59,6 +59,7 @@ describe('TEST APP', () => {
     }) */
     // Близко к пользователю, обрабатываются события нажатия клавиш и тд
     userEvent.type(input, '123123')
+    
     expect(screen.queryByTestId('value-elem')).toContainHTML('123123');
   })
 });

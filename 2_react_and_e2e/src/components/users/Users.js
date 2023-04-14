@@ -1,11 +1,12 @@
 import React, {useEffect, useState} from 'react';
-import axios from "axios";
+import axios from 'axios';
 import {Link} from "react-router-dom";
 
 const Users = () => {
+    //список пользователей
     const [users, setUsers] = useState([]);
 
-    //получаем пользователя
+    //получаем пользователя через axios запрос
     const loadUsers = async () => {
         const resp = await axios.get('https://jsonplaceholder.typicode.com/users')
         setUsers(resp.data);
