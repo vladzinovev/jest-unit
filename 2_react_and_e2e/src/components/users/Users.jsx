@@ -5,6 +5,7 @@ import {Link} from "react-router-dom";
 const Users = () => {
     const [users, setUsers] = useState([]);
 
+    //получаем пользователя
     const loadUsers = async () => {
         const resp = await axios.get('https://jsonplaceholder.typicode.com/users')
         setUsers(resp.data);
