@@ -1,6 +1,7 @@
 import { render, screen} from '@testing-library/react';
 import Users from "./Users.js";
 import axios from 'axios';
+import React from 'react';
 
 jest.mock('axios');
 
@@ -27,6 +28,7 @@ describe('USERS TEST', () => {
 
     test('renders learn react link', async() => {
         //якобы получаем через axios запрос данные
+        // @ts-ignore
         axios.get.mockReturnValue(response);
         render(<Users />);
         //находим массив элементов
