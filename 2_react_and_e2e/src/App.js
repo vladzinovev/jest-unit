@@ -35,7 +35,7 @@ const App = () => {
 export default App; */
  
 import { BrowserRouter, Routes,Route } from "react-router-dom";
-
+import MainPage from './pages/MainPage';
 import AboutPage from './pages/AboutPage';
 import React from "react";
 
@@ -43,7 +43,7 @@ const App=()=>{
   return(
     <BrowserRouter>
       <Routes>
-        
+        <Route path="/" element={<MainPage/>}/>
         <Route path="/about" element={<AboutPage/>}/>
       </Routes>
     </BrowserRouter>
