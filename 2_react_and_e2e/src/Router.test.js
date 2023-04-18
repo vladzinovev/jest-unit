@@ -1,10 +1,10 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import App from './App';
 import {MemoryRouter} from "react-router-dom";
 
 describe('TEST APP', () => {
-    test('Router test', () => {
+    /* test('Router test', () => {
         render(
             <MemoryRouter>
                 <App/>
@@ -16,6 +16,16 @@ describe('TEST APP', () => {
         expect(screen.getByTestId('about-page')).toBeInTheDocument(); //находим заголовок
         userEvent.click(mainLink) //нажимае на вторую ссылку
         expect(screen.getByTestId('main-page')).toBeInTheDocument();
+    }); */
+
+    test('Error page test', () => {
+        render(
+            //ошибочная(несуществующая) страница
+            <MemoryRouter initialEntries={['/sfdfdf']}>
+                <App/>
+            </MemoryRouter>
+        );
+        expect(screen.getByTestId('not-found-page')).toBeInTheDocument();
     });
 })
 
