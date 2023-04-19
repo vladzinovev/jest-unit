@@ -39,17 +39,21 @@ import MainPage from './pages/MainPage';
 import AboutPage from './pages/AboutPage';
 import React from "react";
 import ErrorPage from "./pages/ErrorPage";
+import Users from "./components/users/Users";
+import UserDetailsPage from "./pages/UserDetailsPage";
 
 const App=()=>{
   return(
     <div>
       <Link to="/" data-testid='main-link'>main</Link>
-      <Link to="/about" data-testid='about-link'>main</Link>
+      <Link to="/about" data-testid='about-link'>about</Link>
+      <Link to="/users" data-testid='users-link'>users</Link>
       <Routes>
-        <Route path="*" element={<ErrorPage/>}/>
         <Route path="/" element={<MainPage/>}/>
         <Route path="/about" element={<AboutPage/>}/>
-        
+        <Route path="/users" element={<Users/>}/>
+        <Route path="/users/:id" element={<UserDetailsPage/>}/>
+        <Route path="*" element={<ErrorPage/>}/>
       </Routes>
     </div>
   )
