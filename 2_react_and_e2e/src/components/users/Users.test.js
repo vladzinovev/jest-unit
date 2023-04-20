@@ -57,6 +57,9 @@ describe('USERS TEST', () => {
                 <Users/>
             </MemoryRouter>
         ); */
+        //через helper
+        //render(renderWithRouter(null,'/users'));
+        //или
         render(renderWithRouter(<Users />));
         const users = await screen.findAllByTestId('user-item');
         expect(users.length).toBe(3);

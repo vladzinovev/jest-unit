@@ -37,13 +37,12 @@ export default App; */
 import { Link } from "react-router-dom";
 import React from "react";
 import AppRouter from "./router/AppRouter";
+import Navbar from "./Navbar/Navbar";
 
 const App=()=>{
   return(
     <div>
-      <Link to="/" data-testid='main-link'>main</Link>
-      <Link to="/about" data-testid='about-link'>about</Link>
-      <Link to="/users" data-testid='users-link'>users</Link>
+      <Navbar />
       <AppRouter/>
     </div>
   )
