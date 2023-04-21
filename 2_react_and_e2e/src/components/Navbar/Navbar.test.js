@@ -1,8 +1,8 @@
 import {render, screen} from '@testing-library/react';
 import userEvent from "@testing-library/user-event";
 import React from "react";
+import { renderWithRouter } from '../../tests/helpers/renderWithRouter';
 import Navbar from "./Navbar";
-import {renderWithRouter} from "../../tests/helpers/renderWithRouter";
 
 
 describe('USERS TEST', () => {

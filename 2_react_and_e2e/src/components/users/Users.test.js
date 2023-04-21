@@ -1,3 +1,6 @@
+/**
+@jest-environment jsdom
+ */
 import { render, screen} from '@testing-library/react';
 import Users from "./Users.js";
 import axios from 'axios';
@@ -6,6 +9,7 @@ import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router-dom';
 import AppRouter from '../../router/AppRouter.jsx';
 import { renderWithRouter } from '../../tests/helpers/renderWithRouter.js';
+import '@testing-library/jest-dom'
 
 jest.mock('axios');
 
