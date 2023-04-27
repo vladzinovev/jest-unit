@@ -2,7 +2,7 @@ import React from 'react';
 import {Route, Routes} from "react-router-dom";
 import MainPage from "../pages/MainPage";
 import AboutPage from "../pages/AboutPage";
-import Users from "../components/users/Users.js";
+import Users from "../components/users/Users.jsx";
 import UserDetailsPage from "../pages/UserDetailsPage";
 import ErrorPage from "../pages/ErrorPage";
 

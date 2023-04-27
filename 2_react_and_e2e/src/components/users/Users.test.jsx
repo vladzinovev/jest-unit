@@ -2,7 +2,7 @@
 @jest-environment jsdom
  */
 import { render, screen} from '@testing-library/react';
-import Users from "./Users.js";
+import Users from "./Users.jsx";
 import axios from 'axios';
 import React from 'react';
 import userEvent from '@testing-library/user-event';
