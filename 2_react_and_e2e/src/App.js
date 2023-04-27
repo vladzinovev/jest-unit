@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+/* import React from "react";
+import { useState, useEffect } from "react";
 
 const App = () => {
   const [data, setData] = useState(null);
@@ -31,4 +32,19 @@ const App = () => {
   );
 };
 
-export default App;
+export default App; */
+
+
+import React from "react";
+import AppRouter from "./router/AppRouter";
+import Navbar from "./components/Navbar/Navbar";
+
+const App=()=>{
+  return(
+    <div>
+      <Navbar />
+      <AppRouter/>
+    </div>
+  )
+}
+export default App; 

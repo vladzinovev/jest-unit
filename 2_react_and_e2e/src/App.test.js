@@ -22,7 +22,6 @@ describe('TEST APP', () => {
     // eslint-disable-next-line testing-library/no-debugging-utils
     screen.debug();//возвращает разметку
   }); */
-  
   test('for component data', async () => {
     //компонент который будем тестировать
     render(<App />);
