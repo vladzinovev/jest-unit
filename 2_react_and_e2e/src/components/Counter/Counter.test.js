@@ -7,8 +7,14 @@ import { renderWithRedux } from "../../tests/helpers/renderWithRedux";
 
 describe('Counter test', () => {
     test('Test router', async () => {
-        const {getByTestId} = render(renderWithRedux(<Counter/>,{counter:{value:10}}))
-
+        //const {getByTestId} = render(renderWithRedux(<Counter/>,{counter:{value:10}}))
+        //через RenderTestApp
+        const {getByTestId} = render(renderTestApp(null, {
+            route: '/',
+            initialState: {
+                counter: {value: 10}
+            }
+        }))
         // eslint-disable-next-line testing-library/prefer-screen-queries
         const incrementBtn = getByTestId('increment-btn')
         // eslint-disable-next-line testing-library/prefer-screen-queries
